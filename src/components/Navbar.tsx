@@ -65,10 +65,10 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-50 bg-white/95 border-b-4 border-red-600 shadow-[0_6px_24px_-6px_rgba(220,38,38,0.12)]"
       style={{ overflow: 'visible' }}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 select-none">
-          <img src="/img/logo.png" alt="Logo Memimo" className="h-20 w-auto animate-fadein" />
+          <img src="/img/logo.png" alt="Logo Memimo" className="h-16 w-auto animate-fadein ml-1" />
         </a>
         {/* Menu desktop */}
         <div className="relative hidden md:block">
@@ -108,8 +108,8 @@ export default function Navbar() {
           />
         </div>
         {/* Menú móvil */}
-        <button className="md:hidden p-2" onClick={() => setOpen(true)} aria-label="Abrir menú">
-          <Bars3Icon className="w-7 h-7 text-black" />
+        <button className="md:hidden p-2 ml-2" onClick={() => setOpen(true)} aria-label="Abrir menú">
+          <Bars3Icon className="w-8 h-8 text-black" />
         </button>
         <AnimatePresence>
           {open && (

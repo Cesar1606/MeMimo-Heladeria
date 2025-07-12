@@ -6,16 +6,16 @@ import AnimatedBackground from './AnimatedBackground';
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="relative py-24 px-6 bg-white overflow-hidden">
+    <section id="contacto" className="relative py-20 px-3 sm:px-6 bg-white overflow-hidden">
       <AnimatedBackground />
-      <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
         {/* Mapa minimalista */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="rounded-3xl overflow-hidden shadow-lg border-2 border-red-600"
+          className="rounded-2xl overflow-hidden shadow-lg border-2 border-red-600 w-full h-64 sm:h-80 mb-6 md:mb-0"
         >
           <iframe
             title="Ubicación Memimo"
@@ -26,71 +26,72 @@ export default function Contacto() {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-80"
+            className="w-full h-full min-h-[220px]"
           ></iframe>
         </motion.div>
-        {/* Formulario y datos */}
+        {/* Bloque derecho: datos, WhatsApp y formulario alineados */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col gap-6 items-center md:items-start text-center md:text-left"
+          className="flex flex-col gap-5 items-center md:items-center text-center md:text-left w-full md:max-w-md md:mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-2 text-black">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins mb-2 text-black">
             ¡Contáctanos!
           </h2>
           {/* Dirección */}
-          <div className="flex items-center gap-2 text-lg text-neutral-700">
+          <div className="flex items-center gap-2 text-base sm:text-lg text-neutral-700">
             <MapPinIcon className="w-5 h-5 text-red-600" />
             Av. Giráldez 356, Huancayo, Perú
           </div>
           {/* Horario */}
-          <div className="flex items-center gap-2 text-lg text-neutral-700">
+          <div className="flex items-center gap-2 text-base sm:text-lg text-neutral-700">
             <ClockIcon className="w-5 h-5 text-red-600" />
             Lun-Dom 12:00pm - 9:00pm
           </div>
           {/* Teléfono */}
-          <div className="flex items-center gap-2 text-lg text-neutral-700">
+          <div className="flex items-center gap-2 text-base sm:text-lg text-neutral-700">
             <PhoneIcon className="w-5 h-5 text-red-600" />
             +51 904 836 750
           </div>
-          {/* Botón WhatsApp premium */}
-          <a
-            href="https://wa.me/51904836750"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-bold text-lg shadow-lg hover:bg-black transition-colors duration-300 mt-2"
-          >
-            <FaWhatsapp className="w-6 h-6" /> WhatsApp
-          </a>
-          {/* Formulario de contacto */}
-          <form className="w-full max-w-md flex flex-col gap-4 mt-4">
-            <input
-              type="text"
-              placeholder="Nombre"
-              className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-              className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg"
-              required
-            />
-            <textarea
-              placeholder="Mensaje"
-              rows={3}
-              className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-lg"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 rounded-full bg-black text-white font-bold text-lg shadow hover:bg-red-600 transition-colors duration-300"
+          {/* WhatsApp y Formulario alineados */}
+          <div className="w-full max-w-xs md:max-w-full flex flex-col gap-3 mt-2">
+            <a
+              href="https://wa.me/51904836750"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-600 text-white font-bold text-base sm:text-lg shadow-lg hover:bg-black transition-colors duration-300 w-full justify-center mb-2 md:max-w-md md:mx-auto"
             >
-              Enviar mensaje
-            </button>
-          </form>
+              <FaWhatsapp className="w-6 h-6" /> WhatsApp
+            </a>
+            <form className="flex flex-col gap-3 w-full md:max-w-md md:mx-auto">
+              <input
+                type="text"
+                placeholder="Nombre"
+                className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-base sm:text-lg w-full"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Correo electrónico"
+                className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-base sm:text-lg w-full"
+                required
+              />
+              <textarea
+                placeholder="Mensaje"
+                rows={3}
+                className="px-4 py-3 rounded-lg border-2 border-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-base sm:text-lg w-full"
+                required
+              />
+              <button
+                type="submit"
+                className="px-8 py-3 rounded-full bg-black text-white font-bold text-base sm:text-lg shadow hover:bg-red-600 transition-colors duration-300 w-full"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
         </motion.div>
       </div>
     </section>

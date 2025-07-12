@@ -27,7 +27,7 @@ export default function ScrollToTop() {
           exit={{ opacity: 0, y: 60 }}
           transition={{ duration: 0.4 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-pastelPink dark:bg-pastelBlue shadow-lg hover:scale-110 transition-transform"
+          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 p-2 sm:p-3 rounded-full bg-pastelPink dark:bg-pastelBlue shadow-lg hover:scale-110 transition-transform w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center"
           aria-label="Volver arriba"
         >
           <ArrowUpIcon className="w-6 h-6 text-black" />
