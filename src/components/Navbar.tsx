@@ -129,7 +129,20 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       className="relative px-1 text-black font-semibold transition-colors duration-200 hover:text-red-600"
-                      onClick={() => setOpen(false)}
+                      onClick={e => {
+                        e.preventDefault();
+                        setOpen(false);
+                        setActive(link.name);
+                        const id = link.href.replace('#', '');
+                        if (id) {
+                          const el = document.getElementById(id);
+                          if (el) {
+                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        } else {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
                     >
                       {link.name}
                       <span className="block h-0.5 bg-red-600 scale-x-0 hover:scale-x-100 transition-transform origin-left duration-300" />
