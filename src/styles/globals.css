@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/700.css';
+
+body {
+  @apply bg-white text-black font-poppins transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-black text-white;
+} 
