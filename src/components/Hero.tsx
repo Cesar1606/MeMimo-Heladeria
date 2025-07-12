@@ -30,7 +30,14 @@ export default function Hero() {
             href="#productos"
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.97 }}
-            className="block px-8 py-3 rounded-full bg-red-600 text-white font-bold text-base md:text-lg shadow-lg hover:bg-black transition-colors duration-300 max-w-sm text-center whitespace-normal"
+            className="block px-8 py-3 rounded-full bg-red-600 text-white font-bold text-base md:text-lg shadow-lg hover:bg-black transition-colors duration-300 max-w-sm text-center whitespace-normal cursor-pointer"
+            onClick={e => {
+              e.preventDefault();
+              const el = document.getElementById('productos');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
             Descubre tu nuevo sabor favorito
           </motion.a>

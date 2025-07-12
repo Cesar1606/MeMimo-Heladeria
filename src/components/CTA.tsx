@@ -20,7 +20,14 @@ export default function CTA() {
           href="#contacto"
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-block px-10 py-4 rounded-full bg-red-600 text-white font-bold text-xl shadow-lg hover:bg-black transition-colors duration-300"
+          className="inline-block px-10 py-4 rounded-full bg-red-600 text-white font-bold text-xl shadow-lg hover:bg-black transition-colors duration-300 cursor-pointer"
+          onClick={e => {
+            e.preventDefault();
+            const el = document.getElementById('contacto');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
         >
           Ir a contacto
         </motion.a>
